@@ -26,14 +26,6 @@ export function FormEdit() {
   }).catch(() => {
     console.log("DEU ERRADO")
   })
-
-  const reset2 = () => {
-    let inputs = document.querySelectorAll(".input-form")
-    for (let i in inputs) {
-      inputs[i].value = ""
-    }
-  }
-
   return (
     <div className="container-formulario">
       <Link to="/login/adm">
@@ -83,7 +75,7 @@ export function FormEdit() {
             <input type="text" name="plano" className="input-form" {...register("plano")} />
           </label>
         </div>
-        <button className="bt-editar-ficha aa" onClick={reset2}>ENVIAR</button>
+        <button className="bt-editar-ficha aa">ENVIAR</button>
       </form>
     </div>
   );
