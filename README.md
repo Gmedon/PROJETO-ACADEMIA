@@ -21,18 +21,6 @@ Projeto em grupo do curso **Programadores Cariocas**. Neste projeto desenvolvemo
 * `Contato`: Sistema de validação de contato com JavaScript.
 
 
-<h2 id="tecnologias"> ✔️ Tecnologias Utilizadas </h2>
-  <div style="display: inline_block">
-  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="GIT" height="30" width="40" src="https://icongr.am/devicon/git-original.svg?size=102&color=currentColor">
-</div>
-
-<h2 id="implementações"> 🚀 Implementações Futuras </h2>
-<ul>
-<li> Sistema de <strong> Arrecadação de Fundos </strong>
-<li> Sistema de  <strong> Cadastro via Aplicativo </strong>
-
 <h2 id="autores"> 🖥 Autores  </h2>
 <table>
   <tr>
