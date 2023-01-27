@@ -25,6 +25,12 @@ export function FormEdit() {
     history.push("/")
   }).catch(() => {
     console.log("DEU ERRADO")
+    
+    function limpar2() {
+      let inputs = document.querySelectorAll(".input-form")
+      for (let i in inputs) {
+      inputs[i].value = ""
+    }
   })
   return (
     <div className="container-formulario">
@@ -75,7 +81,7 @@ export function FormEdit() {
             <input type="text" name="plano" className="input-form" {...register("plano")} />
           </label>
         </div>
-        <button className="bt-editar-ficha aa">ENVIAR</button>
+        <button className="bt-editar-ficha aa" onClick={limpar2}>ENVIAR</button>
       </form>
     </div>
   );
