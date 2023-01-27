@@ -25,13 +25,14 @@ export function FormEdit() {
     history.push("/")
   }).catch(() => {
     console.log("DEU ERRADO")
-    
-    function limpar2() {
-      let inputs = document.querySelectorAll(".input-form")
-      for (let i in inputs) {
+  })
+
+  function limpar2() {
+    let inputs = document.querySelectorAll(".input-form")
+    for (let i in inputs) {
       inputs[i].value = ""
     }
-  })
+  }
   return (
     <div className="container-formulario">
       <Link to="/login/adm">
