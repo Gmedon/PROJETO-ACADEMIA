@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
@@ -16,15 +16,30 @@ export function FormEdit() {
   let history = useNavigate()
   const { id } = useParams()
 
-  useEffect(() => {
-    axios.get(`https://exportapi.onrender.com/cadastro/${id}`).then((response) => { reset(response.data) })
-  })
 
-  const editFicha = data => axios.put(`https://exportapi.onrender.com/cadastro/${id}`, data).then(() => {
-    console.log("Deu tudo certo")
-    history.push("/")
-  }).catch(() => {
-    console.log("DEU ERRADO")
+  const [formSubmited, setFormSubmited] = useState(false);
+
+  const editFicha = data => {
+    axios.put(`https://exportapi.onrender.com/cadastro/${id}`, data)
+      .then(() => {
+        console.log("Deu tudo certo")
+        setFormSubmited(true);
+        history.push("/")
+      })
+      .catch(() => {
+        console.log("DEU ERRADO")
+      })
+  }
+
+  useEffect(() => {
+    if (formSubmited) {
+      reset();
+      setFormSubmited(false);
+    }
+  }, [formSubmited, reset]);
+
+  useState(() => {
+    axios.get(`https://exportapi.onrender.com/cadastro/${id}`).then((response) => { reset(response.data) })
   })
 
   function limpar2() {
@@ -33,6 +48,9 @@ export function FormEdit() {
       inputs[i].value = ""
     }
   }
+
+
+
   return (
     <div className="container-formulario">
       <Link to="/login/adm">
